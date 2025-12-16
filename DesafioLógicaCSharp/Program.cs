@@ -4,7 +4,7 @@ class Program
 {
     static void Main() 
     {
-        Exercicio05_ValidarPlaca();
+        Exercicio06_FormatosData();
     }
 
     static void Exercicio01_BoasVindas() 
@@ -91,5 +91,22 @@ class Program
         }
 
         Console.WriteLine(placaValida ? "Placa válida!" : "Placa inválida!");
+    }
+
+    static void Exercicio06_FormatosData() 
+    {
+        DateTime dataAtual = DateTime.Now;
+
+        Console.WriteLine("Formato completo:");
+        Console.WriteLine(dataAtual.ToString("F"));
+
+        Console.WriteLine("\nApenas a data:");
+        Console.WriteLine(dataAtual.ToString("dd/MM/yyyy"));
+
+        Console.WriteLine("\nApenas a hora:");
+        Console.WriteLine(dataAtual.ToString("HH:mm:ss"));
+
+        Console.WriteLine("\nData com mês por extenso:");
+        Console.WriteLine(dataAtual.ToString("dd 'de' MMMM 'de' yyyy"));
     }
 }
