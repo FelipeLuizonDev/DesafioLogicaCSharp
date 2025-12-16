@@ -4,7 +4,50 @@ class Program
 {
     static void Main() 
     {
-        Exercicio06_FormatosData();
+        while (true) 
+        {
+            Console.Clear();
+            Console.WriteLine("=== Exercícios de C# ===");
+            Console.WriteLine("1 - Boas-vindas");
+            Console.WriteLine("2 - Nome Completo");
+            Console.WriteLine("3 - Operações matemáticas");
+            Console.WriteLine("4 - Contar caracteres");
+            Console.WriteLine("5 - Validar placas (pré 2018)");
+            Console.WriteLine("6 - Formatos de datas");
+            Console.WriteLine("0 - Sair");
+            Console.Write("Escolha uma opção: ");
+
+            string opcao = Console.ReadLine() ?? "";
+
+            switch (opcao) 
+            {
+                case "1":
+                    Exercicio01_BoasVindas();
+                    break;
+                case "2":
+                    Exercicio02_NomeCompleto();
+                    break;
+                case "3":
+                    Exercicio03_OperacoesDouble();
+                    break;
+                case "4":
+                    Exercicio04_ContarCaracteres();
+                    break;
+                case "5":
+                    Exercicio05_ValidarPlaca();
+                    break;
+                case "6":
+                    Exercicio06_FormatosData();
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+        }
     }
 
     static void Exercicio01_BoasVindas() 
