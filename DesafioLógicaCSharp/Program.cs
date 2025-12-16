@@ -4,7 +4,7 @@ class Program
 {
     static void Main() 
     {
-        Exercicio04_ContarCaracteres();
+        Exercicio05_ValidarPlaca();
     }
 
     static void Exercicio01_BoasVindas() 
@@ -66,5 +66,30 @@ class Program
         }
 
         Console.WriteLine($"Quantidade de caracteres (sem espaço): {contador}");
+    }
+
+    static void Exercicio05_ValidarPlaca() 
+    {
+        Console.Write("Digite a placa de um veículo: ");
+        string placa = Console.ReadLine() ?? "";
+
+        bool placaValida = true;
+        if (placa.Length != 7)
+            placaValida = false;
+        else 
+        {
+            for (int i = 0; i < 3; i++) 
+            { 
+                if (!char.IsLetter(placa[i]))
+                    placaValida = false;
+            }
+            for (int i = 3; i < 7; i++) 
+            {
+                if (!char.IsDigit(placa[i]))
+                    placaValida = false;
+            }
+        }
+
+        Console.WriteLine(placaValida ? "Placa válida!" : "Placa inválida!");
     }
 }
