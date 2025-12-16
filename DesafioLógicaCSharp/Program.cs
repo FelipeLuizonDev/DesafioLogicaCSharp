@@ -4,7 +4,7 @@ class Program
 {
     static void Main() 
     {
-        Exercicio03_OperacoesDouble();
+        Exercicio04_ContarCaracteres();
     }
 
     static void Exercicio01_BoasVindas() 
@@ -51,5 +51,20 @@ class Program
             Console.WriteLine("Divisão: Não é possível dividir por zero.");
 
         Console.WriteLine($"Média: {media}");
+    }
+
+    static void Exercicio04_ContarCaracteres() 
+    {
+        Console.Write("Digite uma palavra ou frase: ");
+        string texto = Console.ReadLine() ?? "";
+
+        int contador = 0;
+        foreach (char c in texto) 
+        {
+            if (c != ' ')
+                contador++;
+        }
+
+        Console.WriteLine($"Quantidade de caracteres (sem espaço): {contador}");
     }
 }
